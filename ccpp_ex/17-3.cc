@@ -1,0 +1,28 @@
+#include<iostream>
+#include<fstream>
+#include<cstdlib>
+using namespace std;
+
+int main(int argc,char * argv[])
+{
+    if (argc == 1 || argc > 3){
+        cerr << "Usage: " << argv[0] << " outputfile inputfile\n";
+        exit(EXIT_FAILURE);
+    }
+    ofstream fout;
+    ifstream fin;
+    fout.open(argv[1],ios_base::out|ios_base::app);
+    fin.open(argv[2]);
+    if(!fin.is_open()){
+        cerr << "Can't open file "<< argv[2] <<endl ;
+        exit(EXIT_FAILURE);
+    }
+    char ch;
+    while (fin.get(ch) && ch !=EOF)
+    {
+        fout << ch;
+    }
+    fin.close();
+    fout.close();
+    return 0;
+}
