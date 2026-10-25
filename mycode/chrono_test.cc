@@ -3,11 +3,20 @@
 #include<string>
 #include<random>
 #include<thread>
+#include<format>
 using namespace std;
 using namespace std::chrono;
 
 int main()
 {
+    auto utc_now = std::chrono::system_clock::now();
+
+    // 将 UTC 时间点与当前系统时区结合
+    std::chrono::zoned_time lc_time{std::chrono::current_zone(), utc_now};
+    std::cout << lc_time << std::endl;
+    // std::string str_time = std::format("{:%F %T}", utc_now);  // %F=YYYY-MM-DD, %T=HH:MM:SS
+    // std::cout << str_time << std::endl;
+
     random_device rd;
     mt19937 gen(rd());
     string s;
