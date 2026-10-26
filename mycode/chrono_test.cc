@@ -22,6 +22,7 @@ int main()
     string s;
     uniform_real_distribution<> dice(2,5);
     double secs=dice(gen);
+    cout << "Let's neovim" << endl;
     cout << "wait for a few seconds~" << endl << endl;
     this_thread::sleep_for(duration<double>(secs));
     cout << "NOW\nPRESS\nPRESS\nPRESS\nPRESS\nPRESS\nENTER!!!!!";
