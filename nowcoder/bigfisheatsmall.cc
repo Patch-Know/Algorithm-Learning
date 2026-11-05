@@ -12,33 +12,6 @@ int main(){
     cin >> N;
     vector<int> v(N);
     for(int i=0;i<N;i++) cin >> v[i];
-//    int turn=0;
-//    do{
-//        has_turn=false;
-//        int n=v.size();
-//        vector<int> st(n);
-//        int r=0;
-//        vector<bool> temp(n,true);
-//        for(int i=0;i<n;i++){
-//            if(r>0 && v[i]==st[r-1])continue;
-//            if(r>0 && v[i]<st[r-1]){
-//                r--;
-//                temp[i]=false;
-//                has_turn=true;
-//            }
-//            st[r++]=v[i];
-//        }
-//        vector<int> new_v;
-//        for(int i=0;i<n;i++){
-//            if(temp[i])new_v.push_back(v[i]);
-//        }
-//        v=new_v;
-//        
-//        if(has_turn) turn++;
-//    }while(has_turn);
-//    
-//    cout << turn;
-//
     vector<pair<int,int>> st(N);
     int r=0;
     for(int i=N-1;i>=0;i--){
