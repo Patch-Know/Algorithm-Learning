@@ -1,5 +1,5 @@
 //被7整除的子序列最大累加和
-
+//非负数组
 #include<iostream>
 #include<vector>
 #include<algorithm>
